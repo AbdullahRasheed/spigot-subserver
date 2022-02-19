@@ -11,8 +11,8 @@
         <relativePath/>
     </parent>
 
-    <groupId>groupId</groupId>
-    <artifactId>Subserver</artifactId>
+    <groupId>panthera</groupId>
+    <artifactId>panthera-subserver</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
