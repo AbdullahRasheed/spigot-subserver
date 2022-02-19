@@ -26,7 +26,7 @@ public class StandardEloComparator implements IEloComparator {
      */
     public Pair<Integer, Integer> computeChange(PlayerResult p1, PlayerResult p2) {
         float e1 = expectedScore(p1.getElo(), p2.getElo()), e2 = 1 - e1;
-        return new Pair<Integer, Integer>(Math.round(p1.getK()*(p1.getScore()-e1)),
+        return new Pair<>(Math.round(p1.getK()*(p1.getScore()-e1)),
                 Math.round(p2.getK()*(p2.getScore()-e2)));
     }
 
