@@ -7,10 +7,10 @@ package me.abdullah.elolib;
 public class EloRanker<T> implements IRanker<T> {
 
     // Int array consisting of the lowest elo for each rank in order
-    private int[] eloBounds;
+    private final int[] eloBounds;
 
     // Array consisting of the ranks corresponding to the minimum elos from eloBounds
-    private T[] ranks;
+    private final T[] ranks;
 
     /***
      * Constructs the Elo Ranker of type T
