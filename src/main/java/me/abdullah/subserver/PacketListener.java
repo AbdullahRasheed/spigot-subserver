@@ -44,22 +44,7 @@ public class PacketListener implements BiConsumer<Connection, Object> {
         packet.name = Bukkit.getPlayer(uuid).getName().getBytes();
 
         subserver.sendGlobalPacket(packet);
-
-        // TODO please find a better way to do this future me
-        // concurrent modification exception you donut
-//        PlayerConnectionInfoPacket infoPacket = new PlayerConnectionInfoPacket();
-//        int size = Bukkit.getOnlinePlayers().size();
-//        infoPacket.leastSigBits = new long[size];
-//        infoPacket.mostSigBits = new long[size];
-//        infoPacket.names = new byte[size][];
-//        int i = 0;
-//        for (Player player : Bukkit.getOnlinePlayers()) {
-//            infoPacket.leastSigBits[i] = player.getUniqueId().getLeastSignificantBits();
-//            infoPacket.mostSigBits[i] = player.getUniqueId().getMostSignificantBits();
-//            infoPacket.names[i] = player.getName().getBytes();
-//        }
-//
-//        subserver.sendPacket(connection, infoPacket);
+        subserver.sendPacket(connection, new PlayerConnectionInfoPacket());
 
         ExecutorThreads.getCachedThreadService().submit(() -> Caches.getPlayerCache().retrieveAndStore(uuid));
 
