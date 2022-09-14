@@ -9,10 +9,6 @@ import java.util.function.BiConsumer;
 
 public class Server {
 
-    // TODO better sync with begin() and close() methods
-    // A possible issue is that the server begins looking for a connection
-    // right as it closes
-
     private boolean running;
 
     private final ServerSocket serverSocket;
